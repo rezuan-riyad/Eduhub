@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: #eeeeee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Notification icon styling */
+.fa-bell{
+  font-size: 22px;
+  margin-left: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Navbar brand logo positioning */
+@media screen and (max-width: 600px){
+  .brand-logo{
+    position: absolute!important;
+    left:40%!important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardContainer{
+  height: auto;
+  max-width: 500px;
+  margin:auto;
+  margin-bottom: 16px;
+}
+
+/* Modal Group Styling */
+.modalGroup{
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* modal styling */
+.modal-content{
+  padding-bottom: 0px!important;
+  margin: 0;
+  min-height: 200px;
+  max-height: auto;
+}
+textarea.materialize-textarea{
+  min-height: 200px;
+}
+.modal-footer{
+  padding: 0 24px!important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* profile icon hover customize */
+#profile_icon:hover{
+  background: transparent;
 }

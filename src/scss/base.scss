@@ -1,0 +1,57 @@
+// Customize Input, Textarea variables
+$input-height: 2.8rem;
+$input-border-color: #757575; //gray darken-1
+$input-border: 1px solid $input-border-color;
+$input-background: #fff !default;
+$primary-color: #0097a7;
+$secondary-color: #0097a7;
+$small-screen-up: 601px;
+$navbar-height-mobile: 7vh;
+
+@import '../../node_modules/materialize-css/sass/materialize';
+h4,h5,h6{
+  color: #0097a7;
+}
+
+.signUp{
+  margin: 20px auto 10px auto;
+  padding: 5px 20px 10px 20px;
+}
+button{
+  margin: 10px auto 10px auto;
+  width: 120px;
+}
+//cyan lighten
+button:hover{
+  background:#eeeeee;
+  color: black;
+}
+.login-text{
+  color: $input-border-color;
+}
+.input-field{
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+// Display toggler burger icon on small screen only
+@media #{$medium-and-up} {
+  a.sidenav-trigger { display: none; }
+}
+
+.sidenav{
+  background: #eee;
+}
+
+.card-panel{
+  padding: 16px 16px;
+}
+
+//Textarea
+form textarea{
+  outline: none;
+  border: 1px solid $secondary-color;
+}
+form textarea:focus {
+  border: 2px solid $secondary-color;
+}

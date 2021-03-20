@@ -1,0 +1,22 @@
+/* Styling for Sign Up component */
+.signUp{
+  max-width: 500px;
+  min-width: 380px;
+  height: auto;
+  border-radius: 5px;
+}
+.signUp p{
+  margin: 8px 0;
+}
+.signUp h4{
+  margin: 12px 0 8px 0;
+}
+.signUp .row{
+  margin-bottom: 8px;
+}
+.signUp .radio-btn label {
+  padding: 0 20px;
+}
+.signUp .checkbox{
+  transform: scale(.9);
+}

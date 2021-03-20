@@ -1,25 +1,63 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import './css/materialize.css'
 import './App.css';
+import M from "materialize-css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import Navbar from './components/navbars//Navbar.js'
+import BottomNav from './components/navbars/BottomNav.js'
+import NavLoggedOut from './components/navbars/NavLoggedOut.js'
+import Home from './components/Home.js'
+import Profile from './components/Profile.js'
+import Archives from './components/Archives.js'
+import Activities from './components/Activities.js'
+import LogIn from './components/LogIn'
+import SignUp from './components/SignUp'
+
+class App extends Component{
+  constructor(){
+    super()
+    this.state = {
+      isLoggedIn: true
+    }
+  }
+  componentDidMount(){
+    // Initialize all materialize components
+    M.AutoInit();
+  }
+  render(){
+    return (
+      <Router>
+          <Switch>
+              <Route exact path="/">
+                  {this.state.isLoggedIn ? <Navbar /> : <NavLoggedOut />}
+                  <Home isLoggedIn={this.state.isLoggedIn}/>
+                  <BottomNav />
+              </Route>
+              <Route path="/profile">
+                  {this.state.isLoggedIn ? <Navbar /> : null}
+                  {this.state.isLoggedIn ? <Profile /> : <SignUp />}
+              </Route>
+              <Route path="/archives">
+                  {this.state.isLoggedIn ? <Navbar /> : null}
+                  {this.state.isLoggedIn ? <Archives /> : <SignUp />}
+                  <BottomNav />
+              </Route>
+              <Route path="/activities">
+                  {this.state.isLoggedIn ? <Navbar /> : null}
+                  {this.state.isLoggedIn ? <Activities /> : <SignUp />}
+                  <BottomNav />
+              </Route>
+              <Route path="/signup">
+                  <SignUp />
+              </Route>
+              <Route path="/login">
+                  <LogIn />
+              </Route>
+          </Switch>
+      </Router>
+    )
+  }
 }
-
 export default App;

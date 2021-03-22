@@ -1,18 +1,23 @@
 import React from 'react'
 import styles from '../../css/postCard.module.css'
 
-function CardHead(){
+function CardHead(props){
+  const { name, status, institution, ins_short, topic} = props
   return(
     <div>
       <div className={styles.cardHead}>
           <div className={styles.image}>
           </div>
           <div>
-              <div className={styles.name}>Rezuan Ahmed</div>
+              <div className={styles.name}>
+                  {name}
+              </div>
               <div className={styles.subTitle}>
-                  Student<div className={styles.bar}></div>
-                  Rajshahi University<div className={styles.bar}></div>
-                  Physics
+                  {status}
+                  <div className={styles.bar}></div>
+                  {institution.length < 30 ? institution : ins_short}
+                  <div className={styles.bar}></div>
+                  {topic}
               </div>
           </div>
       </div>

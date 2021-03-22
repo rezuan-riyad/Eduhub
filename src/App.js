@@ -32,12 +32,13 @@ class App extends Component{
           <Switch>
               <Route exact path="/">
                   {this.state.isLoggedIn ? <Navbar /> : <NavLoggedOut />}
-                  <Home isLoggedIn={this.state.isLoggedIn}/>
+                  <Home />
                   <BottomNav />
               </Route>
               <Route path="/profile">
                   {this.state.isLoggedIn ? <Navbar /> : null}
                   {this.state.isLoggedIn ? <Profile /> : <SignUp />}
+                  <BottomNav />
               </Route>
               <Route path="/archives">
                   {this.state.isLoggedIn ? <Navbar /> : null}

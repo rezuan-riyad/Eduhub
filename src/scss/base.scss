@@ -12,7 +12,6 @@ $navbar-height-mobile: 7vh;
 h4,h5,h6{
   color: #0097a7;
 }
-
 .signUp{
   margin: 20px auto 10px auto;
   padding: 5px 20px 10px 20px;
@@ -20,12 +19,16 @@ h4,h5,h6{
 button{
   margin: 10px auto 10px auto;
   width: 120px;
+  font-weight: 500;
 }
 //cyan lighten
 button:hover{
-  background:#eeeeee;
-  color: black;
+  background:#eeeeee !important;
+  color: rgba(black, 0.7);
 }
+ button:focus{
+   background: transparent;
+ }
 .login-text{
   color: $input-border-color;
 }

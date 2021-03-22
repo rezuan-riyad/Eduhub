@@ -36,12 +36,15 @@ const Line = styled.div`
     background: lightgrey;
     margin: 5px 0;
 `;
+const H5 = styled.h5`
+    margin-top: 120px;
+`;
 class  BottomNotify extends React.Component {
   render(){
     return (
       <Container>
           <Div>
-              <h5>Notification</h5>
+              <H5>Notification</H5>
               <Section>
                   <P><strong>John Doe</strong> wrote about Quantum Mechanics.
                   about Quantum Mechanics.

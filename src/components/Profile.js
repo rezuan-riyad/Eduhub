@@ -79,7 +79,7 @@ class Profile extends Component {
                           <P className="grey-text text-darken-3">Professor</P>
                       </TextBox>
                   </RowFlex>
-                  <div class="divider"></div>
+                  <div className="divider"></div>
 
                   <div>
                       <Section>

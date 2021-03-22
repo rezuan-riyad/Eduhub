@@ -8103,11 +8103,16 @@ h4, h5, h6 {
 button {
   margin: 10px auto 10px auto;
   width: 120px;
+  font-weight: 500;
 }
 
 button:hover {
-  background: #eeeeee;
-  color: black;
+  background: #eeeeee !important;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+button:focus {
+  background: transparent;
 }
 
 .login-text {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 
-// import components
+import posts from '../json/allPosts.json'
 
 import SearchModal from './modals/SearchModal'
 import CreateModal from './modals/CreateModal'
@@ -30,6 +30,9 @@ const RightBar = styled.div`
 `;
 class Home extends Component {
   render(){
+    const postCards = posts.map(post =>{
+      return <Card key={post.id} post={post} />
+    })
     return(
       <div>
         <LeftBar>
@@ -47,10 +50,8 @@ class Home extends Component {
                 <SearchModal />
               </div>
             </div>
-            <Card isLoggedIn={this.props.isLoggedIn}/>
-            <Card isLoggedIn={this.props.isLoggedIn}/>
-            <Card isLoggedIn={this.props.isLoggedIn}/>
         </RightBar>
+        {postCards}
       </div>
     )
   }

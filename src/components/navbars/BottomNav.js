@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { primary_color, bottomNavHeight } from '../../variables.js'
@@ -22,7 +23,7 @@ const Container = styled.div`
       display: none;
     }
 `;
-const Link = styled.a`
+const A = styled.div`
     color: white;
     display: flex;
     flex-direction: column;
@@ -39,37 +40,53 @@ const Icon = styled.i`
 class BottomNav extends React.Component{
     constructor(props){
       super(props)
-      this.state = { showNotificaion: false}
+      this.state = {
+        showNotificaion: false,
+        activeNotification: true
+      }
     }
+
     handleNotification = () =>{
       this.setState({
-        showNotificaion: !this.state.showNotificaion
+        showNotificaion: !this.state.showNotificaion,
+        activeNotification : false
       })
     }
     render(){
         return (
           <Container id="bottomNav">
               {this.state.showNotificaion ? <BottomNotify /> : null }
-              <Link title="Create Post">
-                  <Icon className="fas fa-pen"></Icon>
+              <A title="Create Post">
+                  <Icon className="small material-icons">edit</Icon>
                   <P>Create</P>
-              </Link>
-              <Link title="Notifications" onClick={this.handleNotification}>
-                  <Icon className="far fa-bell"></Icon>
-                  <P>Notifications</P>
-              </Link>
-              <Link title="See Profile">
-                  <Icon className="far fa-user-circle"></Icon>
+              </A>
+
+              <A title="Notifications" onClick={this.handleNotification}>
+                <Icon className="small material-icons">
+                    { this.state.activeNotification ? "notifications_active" : "notifications_none"}
+                </Icon>
+                <P>Notifications</P>
+              </A>
+
+              <Link to="/profile">
+                <A title="See Profile">
+                  <Icon className="small material-icons">account_circle</Icon>
                   <P>Profile</P>
+                </A>
               </Link>
-              <Link title="Search">
-                  <Icon className="fas fa-search"></Icon>
-                  <P>Search</P>
+
+              <A title="Search">
+                <Icon className="small material-icons">search</Icon>
+                <P>Search</P>
+              </A>
+
+              <Link to="/">
+                <A title="Home">
+                  <Icon className="small material-icons">home</Icon>
+                  <P>Home</P>
+                </A>
               </Link>
-              <Link title="Log Out">
-                  <Icon className="fas fa-sign-out-alt"></Icon>
-                  <P>Log Out</P>
-              </Link>
+
           </Container>
         )
     }

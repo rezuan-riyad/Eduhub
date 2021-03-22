@@ -45,12 +45,16 @@ class Navbar extends Component {
   constructor(){
     super()
     this.state = {
+      activeNotification: true,
       showNotificaion : false
     }
     this.handleNotification = this.handleNotification.bind(this)
   }
   handleNotification(e){
-    this.setState({ showNotificaion: !this.state.showNotificaion})
+    this.setState({
+      showNotificaion: !this.state.showNotificaion,
+      activeNotification: false
+    })
   }
   render(){
     return(
@@ -66,9 +70,10 @@ class Navbar extends Component {
                 <li><Link to="/activities">Activities</Link></li>
                 <li>
                   <Icons>
-                    <i className="far fa-bell" onClick={this.handleNotification}></i>
-                        { this.state.showNotificaion ? <Notifications /> : null}
-                    <Badge></Badge>
+                    <i className="large material-icons" onClick={this.handleNotification}>
+                        {this.state.activeNotification ? "notifications_active" : "notifications_none"}
+                    </i>
+                        { this.state.showNotificaion ? <Notifications /> : null }
                     <Link to="/profile" id="profile_icon">
                         <Image></Image>
                     </Link>
